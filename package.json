@@ -1,7 +1,7 @@
 {
   "name": "github-app",
   "version": "0.1.0",
-  "homepage": "https://dimasambo.github.io/test-githubusers",
+  "homepage": "https://dimasambo.github.io/pokemons",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
@@ -16,6 +16,9 @@
     "@types/react-router-dom": "^5.3.3",
     "antd": "^4.20.6",
     "axios": "^0.27.2",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsx-a11y": "^6.6.1",
+    "eslint-plugin-react-hooks": "^4.6.0",
     "formik": "^2.2.9",
     "node-sass": "^7.0.1",
     "react": "^18.1.0",
@@ -23,6 +26,7 @@
     "react-redux": "^8.0.2",
     "react-router-dom": "^5.3.3",
     "react-scripts": "5.0.1",
+    "react-select": "^5.4.0",
     "redux": "^4.2.0",
     "redux-thunk": "^2.4.1",
     "reselect": "^4.1.5",
@@ -56,6 +60,21 @@
     ]
   },
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.38.0",
+    "@typescript-eslint/parser": "^5.38.0",
+    "eslint": "^8.23.1",
+    "eslint-plugin-react": "^7.31.8",
     "gh-pages": "^4.0.0"
-  }
+  },
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "n"
+  },
+  "keywords": [
+    "no"
+  ],
+  "author": "no",
+  "license": "ISC"
 }

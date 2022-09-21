@@ -1,11 +1,9 @@
 import {Action, applyMiddleware, combineReducers, compose, createStore} from "redux";
 import thunkMiddleware, {ThunkAction} from 'redux-thunk'
-import usersReducer from "./users/users-reducer";
-import userReducer from "./user/user-reducer";
+import pokemonsReducer from "./pokemons/pokemons-reducer";
 
-let rootReducer = combineReducers({
-    users: usersReducer,
-    user: userReducer
+const rootReducer = combineReducers({
+    pokemons: pokemonsReducer
 });
 
 type RootReducerType = typeof rootReducer;
@@ -18,7 +16,7 @@ export type BaseThunkType<A extends Action, R = Promise<void>> = ThunkAction<R, 
 // @ts-ignore
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
-let store = createStore(rootReducer, composeEnhancers(applyMiddleware(thunkMiddleware)));
+const store = createStore(rootReducer, composeEnhancers(applyMiddleware(thunkMiddleware)));
 
 // @ts-ignore
 window.__store__ = store;

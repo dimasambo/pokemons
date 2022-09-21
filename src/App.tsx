@@ -1,19 +1,19 @@
 import React, {Component} from 'react';
 import './App.css';
-import {HashRouter, Link, Redirect, Route, Router, Switch, withRouter} from "react-router-dom";
+import {HashRouter, Link, Redirect, Route, Switch, withRouter} from "react-router-dom";
 import {compose} from "redux";
 import {connect, Provider} from "react-redux";
-import store, {AppStateType} from "./Redux/redux-store";
+import store from "./Redux/redux-store";
 
 import "antd/dist/antd.css";
 import {Layout, Menu} from 'antd';
-import {UsersPage} from "./components/UsersPage/UsersPage";
-import {UserPage} from "./components/UserPage/UserPage";
+import {PokemonsPage} from "./components/PokemonsPage/PokemonsPage";
+import {PokemonPage} from "./components/PokemonPage/PokemonPage";
 
 const {Header, Content, Footer, Sider} = Layout;
 
 const items = [
-    {label: <Link to='/users'>Users</Link>, key: 'item-1'}
+    {label: <Link to='/pokemons'>Pokemons</Link>, key: 'item-1'}
 ];
 
 class App extends Component {
@@ -58,16 +58,13 @@ class App extends Component {
                         <div className="site-layout-background" style={{padding: 24, minHeight: 360}}>
                             <Switch>
                                 <Route exact path='/'
-                                       render={() => <Redirect to={"/users"}/>}/>
-                                <Route path='/users'>
-                                    <UsersPage />
+                                       render={() => <Redirect to={"/pokemons"}/>}/>
+                                <Route path='/pokemons'>
+                                    <PokemonsPage />
                                 </Route>
-                                <Route path='/user/:userLogin'>
-                                    <UserPage />
+                                <Route path='/pokemon/:pokemonName'>
+                                    <PokemonPage />
                                 </Route>
-
-                                {/*<Route path='/user/:userLogin'
-                                       component={UserPage}/>*/}
                             </Switch>
                         </div>
                     </Content>
@@ -78,14 +75,14 @@ class App extends Component {
     }
 }
 
-const mapStateToProps = (state: AppStateType) => ({})
+const mapStateToProps = () => ({})
 
-let AppContainer = compose<React.ComponentType>(
+const AppContainer = compose<React.ComponentType>(
     withRouter,
     connect(mapStateToProps, {})
 )(App);
 
-const GithubUsersApp: React.FC = () => {
+const PkemonsApp: React.FC = () => {
     return <HashRouter>
         <Provider store={store}>
             <AppContainer/>
@@ -93,4 +90,4 @@ const GithubUsersApp: React.FC = () => {
     </HashRouter>
 }
 
-export default GithubUsersApp;
+export default PkemonsApp;
